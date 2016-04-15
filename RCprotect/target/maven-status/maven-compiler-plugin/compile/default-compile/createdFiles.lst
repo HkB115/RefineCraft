@@ -1,0 +1,10 @@
+net/refination/refinecraft/protect/RefineCraftConnect.class
+net/refination/refinecraft/protect/RCprotect.class
+net/refination/refinecraft/protect/ProtectConfig.class
+net/refination/refinecraft/protect/RCprotectEntityListener.class
+net/refination/refinecraft/protect/RCprotectBlockListener.class
+net/refination/refinecraft/protect/InterfaceProtect.class
+net/refination/refinecraft/protect/RCprotectWeatherListener.class
+net/refination/refinecraft/protect/RefineCraftConnect$1.class
+net/refination/refinecraft/protect/EmergencyListener.class
+net/refination/refinecraft/protect/RefineCraftConnect$ProtectReloader.class

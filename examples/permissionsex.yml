@@ -1,0 +1,150 @@
+groups:
+    Default:
+        default: true
+        permissions:
+        - refinecraft.spawn
+        - refinecraft.rules
+        - refinecraft.motd
+        - refinecraft.list
+        - refinecraft.helpop
+        - refinecraft.help
+        - modifyworld.*
+        prefix: '&e'
+        options:
+            build: false
+            rank: '1000'
+    Builder:
+        permissions:
+        - refinecraft.afk
+        - refinecraft.back
+        - refinecraft.back.ondeath
+        - refinecraft.balance
+        - refinecraft.balance.others
+        - refinecraft.balancetop
+        - refinecraft.chat.color
+        - refinecraft.chat.shout
+        - refinecraft.chat.question
+        - refinecraft.compass
+        - refinecraft.depth
+        - refinecraft.home
+        - refinecraft.ignore
+        - refinecraft.kit
+        - refinecraft.kits.tools
+        - refinecraft.mail
+        - refinecraft.mail.send
+        - refinecraft.me
+        - refinecraft.msg
+        - refinecraft.nick
+        - refinecraft.pay
+        - refinecraft.ping
+        - refinecraft.powertool
+        - refinecraft.protect
+        - refinecraft.sethome
+        - refinecraft.signs.use.*
+        - refinecraft.signs.create.disposal
+        - refinecraft.signs.create.mail
+        - refinecraft.signs.create.protection
+        - refinecraft.signs.create.trade
+        - refinecraft.signs.break.disposal
+        - refinecraft.signs.break.mail
+        - refinecraft.signs.break.protection
+        - refinecraft.signs.break.trade
+        - refinecraft.suicide
+        - refinecraft.time
+        - refinecraft.tpa
+        - refinecraft.tpaccept
+        - refinecraft.tpahere
+        - refinecraft.tpdeny
+        - refinecraft.warp
+        - refinecraft.warp.list
+        - refinecraft.worth
+        inheritance:
+        - default
+        prefix: '&2'
+        options:
+            build: true
+            rank: '500'
+    Moderator:
+        permissions:
+        - refinecraft.ban
+        - refinecraft.ban.notify
+        - refinecraft.banip
+        - refinecraft.broadcast
+        - refinecraft.clearinventory
+        - refinecraft.delwarp
+        - refinecraft.eco.loan
+        - refinecraft.ext
+        - refinecraft.getpos
+        - refinecraft.helpop.recieve
+        - refinecraft.home.others
+        - refinecraft.invsee
+        - refinecraft.jails
+        - refinecraft.jump
+        - refinecraft.kick
+        - refinecraft.kick.notify
+        - refinecraft.kill
+        - refinecraft.mute
+        - refinecraft.nick.others
+        - refinecraft.realname
+        - refinecraft.setwarp
+        - refinecraft.signs.create.*
+        - refinecraft.signs.break.*
+        - refinecraft.spawner
+        - refinecraft.thunder
+        - refinecraft.time
+        - refinecraft.time.set
+        - refinecraft.protect.alerts
+        - refinecraft.protect.admin
+        - refinecraft.protect.ownerinfo
+        - refinecraft.ptime
+        - refinecraft.ptime.others
+        - refinecraft.togglejail
+        - refinecraft.top
+        - refinecraft.tp
+        - refinecraft.tphere
+        - refinecraft.tppos
+        - refinecraft.tptoggle
+        - refinecraft.unban
+        - refinecraft.unbanip
+        - refinecraft.weather
+        - refinecraft.whois
+        - refinecraft.world
+        - refinecraft.worlds.*
+        - permissions.user.promote.default
+        - permissions.user.demote.default
+        - permissions.manage.membership
+        inheritance:
+        - builder
+        prefix: '&5'
+        options:
+            build: true
+            rank: '200'
+    Admin:
+        permissions:
+        - -refinecraft.backup
+        - -refinecraft.refinecraft
+        - -refinecraft.setspawn
+        - -refinecraft.reloadall
+        - refinecraft.*
+        - permissions.manage.users
+        - permissions.manage.users.permissions
+        - permissions.manage.users.permissions.timed
+        inheritance:
+        - moderator
+        prefix: '&c'
+        options:
+            build: true
+            rank: '100'
+    Owner:
+        permissions:
+        - '*'
+        inheritance:
+        - admin
+        prefix: '&4'
+        options:
+            build: true
+            rank: '0'
+users:
+    snowleo:
+        group:
+        - Builder

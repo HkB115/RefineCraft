@@ -1,0 +1,134 @@
+default: Default
+groups:
+  Default:
+    permissions:
+    - refinecraft.spawn
+    - refinecraft.rules
+    - refinecraft.motd
+    - refinecraft.list
+    - refinecraft.helpop
+    - refinecraft.help
+    groups: []
+    meta: []
+  Builder:
+    permissions:
+    - refinecraft.build
+    - refinecraft.afk
+    - refinecraft.back
+    - refinecraft.back.ondeath
+    - refinecraft.balance
+    - refinecraft.balance.others
+    - refinecraft.balancetop
+    - refinecraft.chat.color
+    - refinecraft.chat.shout
+    - refinecraft.chat.question
+    - refinecraft.compass
+    - refinecraft.depth
+    - refinecraft.home
+    - refinecraft.ignore
+    - refinecraft.kit
+    - refinecraft.kits.tools
+    - refinecraft.mail
+    - refinecraft.mail.send
+    - refinecraft.me
+    - refinecraft.msg
+    - refinecraft.nick
+    - refinecraft.pay
+    - refinecraft.ping
+    - refinecraft.powertool
+    - refinecraft.protect
+    - refinecraft.sethome
+    - refinecraft.signs.use.*
+    - refinecraft.signs.create.disposal
+    - refinecraft.signs.create.mail
+    - refinecraft.signs.create.protection
+    - refinecraft.signs.create.trade
+    - refinecraft.signs.break.disposal
+    - refinecraft.signs.break.mail
+    - refinecraft.signs.break.protection
+    - refinecraft.signs.break.trade
+    - refinecraft.suicide
+    - refinecraft.time
+    - refinecraft.tpa
+    - refinecraft.tpaccept
+    - refinecraft.tpahere
+    - refinecraft.tpdeny
+    - refinecraft.warp
+    - refinecraft.warp.list
+    - refinecraft.worth
+    groups:
+    - Default
+    meta:
+      priority: '20'
+  Moderator:
+    permissions:
+    - refinecraft.ban
+    - refinecraft.ban.notify
+    - refinecraft.banip
+    - refinecraft.broadcast
+    - refinecraft.clearinventory
+    - refinecraft.delwarp
+    - refinecraft.eco.loan
+    - refinecraft.ext
+    - refinecraft.getpos
+    - refinecraft.helpop.recieve
+    - refinecraft.home.others
+    - refinecraft.invsee
+    - refinecraft.jails
+    - refinecraft.jump
+    - refinecraft.kick
+    - refinecraft.kick.notify
+    - refinecraft.kits.*
+    - refinecraft.kill
+    - refinecraft.mute
+    - refinecraft.nick.others
+    - refinecraft.realname
+    - refinecraft.setwarp
+    - refinecraft.signs.create.*
+    - refinecraft.signs.break.*
+    - refinecraft.spawner
+    - refinecraft.thunder
+    - refinecraft.time
+    - refinecraft.time.set
+    - refinecraft.protect.alerts
+    - refinecraft.protect.admin
+    - refinecraft.protect.ownerinfo
+    - refinecraft.ptime
+    - refinecraft.ptime.others
+    - refinecraft.togglejail
+    - refinecraft.top
+    - refinecraft.tp
+    - refinecraft.tphere
+    - refinecraft.tppos
+    - refinecraft.tptoggle
+    - refinecraft.unban
+    - refinecraft.unbanip
+    - refinecraft.warps.*
+    - refinecraft.weather
+    - refinecraft.whois
+    - refinecraft.world
+    - refinecraft.worlds.*
+    groups:
+    - Builder
+    meta:
+      priority: '40'
+  Admin:
+    permissions:
+    # Since we use refinecraft.* permission here, we can still disable commands like this
+    # This can be done with any pemission nodes
+    - ^refinecraft.backup
+    - ^refinecraft.refinecraft
+    - ^refinecraft.setspawn
+    - ^refinecraft.reloadall
+    - refinecraft.*
+    groups:
+    - Moderator
+    meta:
+      priority: '80'
+  Owner:
+    permissions:
+    - refinecraft.*
+    groups:
+    - Admin
+    meta:
+      priority: '100'

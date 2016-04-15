@@ -1,0 +1,9 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: RCprotect
+main: net.refination.refinecraft.protect.RCprotect
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: ${project.version}-b${BUILD_NUMBER}
+website: http://tiny.cc/RefineCraftCommands
+description: Provides protection for various parts of the world.
+authors: [Zenexer, ementalo, Aelux, Brettflan, KimKandor, snowleo, ceulemans, Xeology, KHobbits]
+softdepend: [RefineCraft]

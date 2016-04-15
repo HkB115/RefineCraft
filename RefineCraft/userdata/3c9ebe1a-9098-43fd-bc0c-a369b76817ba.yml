@@ -1,0 +1,10 @@
+homes:
+  home:
+    world: testWorld
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    yaw: 0.0
+    pitch: 0.0
+money: '0'
+godmode: false

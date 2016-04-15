@@ -1,0 +1,104 @@
+package net.refination.refinecraft;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
+
+import net.refination.refinecraft.commands.InterfaceRefineCraftCommand;
+import net.refination.refinecraft.commands.NoChargeException;
+
+import org.bukkit.World.Environment;
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.InvalidDescriptionException;
+import org.junit.Test;
+
+import java.io.IOException;
+
+
+public class MessagingTest {
+
+    private final OfflinePlayer base1;
+    private final RefineCraft RC;
+    private final FakeServer server;
+
+    public MessagingTest() {
+        server = new FakeServer();
+        server.createWorld("testWorld", Environment.NORMAL);
+        RC = new RefineCraft(server);
+        try {
+            RC.setupForTesting(server);
+        } catch (InvalidDescriptionException ex) {
+            fail("InvalidDescriptionException");
+        } catch (IOException ex) {
+            fail("IOException");
+        }
+        base1 = server.createPlayer("testPlayer1");
+        server.addPlayer(base1);
+        RC.getUser(base1);
+    }
+
+    private void runCommand(String command, User user, String args) throws Exception {
+        runCommand(command, user, args.split("\\s+"));
+    }
+
+    private void runCommand(String command, User user, String[] args) throws Exception {
+        InterfaceRefineCraftCommand cmd;
+
+        try {
+            cmd = (InterfaceRefineCraftCommand) RefineCraft.class.getClassLoader()
+                .loadClass("net.refination.refinecraft.commands.Command" + command).newInstance();
+            cmd.setRefineCraft(RC);
+            cmd.run(server, user, command, null, args);
+        } catch (NoChargeException ex) {
+        }
+
+    }
+
+    private void runConsoleCommand(String command, String args) throws Exception {
+        runConsoleCommand(command, args.split("\\s+"));
+    }
+
+    private void runConsoleCommand(String command, String[] args) throws Exception {
+        InterfaceRefineCraftCommand cmd;
+
+        CommandSender sender = server.getConsoleSender();
+
+        try {
+            cmd = (InterfaceRefineCraftCommand) RefineCraft.class.getClassLoader()
+                .loadClass("net.refination.refinecraft.commands.Command" + command).newInstance();
+            cmd.setRefineCraft(RC);
+            cmd.run(server, new CommandSource(sender), command, null, args);
+        } catch (NoChargeException ex) {
+        }
+    }
+
+    @Test(expected = Exception.class) // I really don't like this, but see note below about console reply
+    public void testLastMessageReplyRecipient() throws Exception {
+        User user1 = RC.getUser(base1);
+        Console console = Console.getInstance();
+
+        if (RC.getSettings().isLastMessageReplyRecipient()) {
+            assertNull(console.getReplyRecipient()); // console never messaged or received messages from anyone.
+
+            // user1 messages console saying "Hey, master!"
+            runCommand("msg", user1, console.getName() + " Hey, master!");
+
+            // console should now have its reply-recipient as user1, since the console doesn't have a previous recipient.
+            assertEquals(console.getReplyRecipient(), user1);
+
+            if (RC.getSettings().isLastMessageReplyRecipient()) {
+                runCommand("r", user1, "This is me sending you a message using /r without you replying!");
+            }
+
+            // Not really much of a strict test, but just "testing" console output. 
+            user1.setAfk(true);
+
+            // Console replies using "/r Hey, son!"
+            //
+            // This throws Exception because the base1 is an OfflinePlayer (isOnline() returns false).
+            runConsoleCommand("r", "Hey, son!");
+        } else {
+            throw new Exception(); // Needed to prevent build failures.
+        }
+    }
+}

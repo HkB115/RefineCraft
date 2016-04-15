@@ -1,0 +1,6 @@
+net/refination/refinecraft/chat/RCchatPlayerListenerNormal.class
+net/refination/refinecraft/chat/RCchatPlayer.class
+net/refination/refinecraft/chat/ChatStore.class
+net/refination/refinecraft/chat/RCchatPlayerListenerHighest.class
+net/refination/refinecraft/chat/RCchat.class
+net/refination/refinecraft/chat/RCchatPlayerListenerLowest.class

@@ -1,0 +1,133 @@
+users:
+    snowleo:
+        groups:
+        - Admin
+groups:
+    Default:
+        permissions:
+            permissions.build: false
+            refinecraft.spawn: true
+            refinecraft.rules: true
+            refinecraft.motd: true
+            refinecraft.list: true
+            refinecraft.helpop: true
+            refinecraft.help: true
+    Builder:
+        permissions:
+            permissions.build: true
+            refinecraft.afk: true
+            refinecraft.back: true
+            refinecraft.back.ondeath: true
+            refinecraft.balance: true
+            refinecraft.balance.others: true
+            refinecraft.balancetop: true
+            refinecraft.chat.color: true
+            refinecraft.chat.shout: true
+            refinecraft.chat.question: true
+            refinecraft.compass: true
+            refinecraft.depth: true
+            refinecraft.home: true
+            refinecraft.ignore: true
+            refinecraft.kit: true
+            refinecraft.kits.tools: true
+            refinecraft.mail: true
+            refinecraft.mail.send: true
+            refinecraft.me: true
+            refinecraft.msg: true
+            refinecraft.nick: true
+            refinecraft.pay: true
+            refinecraft.ping: true            
+            refinecraft.powertool: true
+            refinecraft.protect: true
+            refinecraft.sethome: true
+            refinecraft.signs.use.*: true
+            refinecraft.signs.create.disposal: true
+            refinecraft.signs.create.mail: true
+            refinecraft.signs.create.protection: true
+            refinecraft.signs.create.trade: true
+            refinecraft.signs.break.disposal: true
+            refinecraft.signs.break.mail: true
+            refinecraft.signs.break.protection: true
+            refinecraft.signs.break.trade: true
+            refinecraft.suicide: true
+            refinecraft.time: true
+            refinecraft.tpa: true
+            refinecraft.tpaccept: true
+            refinecraft.tpahere: true
+            refinecraft.tpdeny: true
+            refinecraft.warp: true
+            refinecraft.warp.list: true
+            refinecraft.worth: true
+        inheritance:
+        - Default
+    Moderator:
+        permissions:
+            refinecraft.ban: true
+            refinecraft.ban.notify: true
+            refinecraft.banip: true
+            refinecraft.broadcast: true
+            refinecraft.clearinventory: true
+            refinecraft.delwarp: true
+            refinecraft.eco.loan: true
+            refinecraft.ext: true
+            refinecraft.getpos: true
+            refinecraft.helpop.recieve: true
+            refinecraft.home.others: true
+            refinecraft.invsee: true
+            refinecraft.jails: true
+            refinecraft.jump: true
+            refinecraft.kick: true
+            refinecraft.kick.notify: true
+            refinecraft.kill: true
+            refinecraft.mute: true
+            refinecraft.nick.others: true
+            refinecraft.realname: true
+            refinecraft.setwarp: true
+            refinecraft.signs.create.*: true
+            refinecraft.signs.break.*: true
+            refinecraft.spawner: true
+            refinecraft.thunder: true
+            refinecraft.time: true
+            refinecraft.time.set: true
+            refinecraft.protect.alerts: true
+            refinecraft.protect.admin: true
+            refinecraft.protect.ownerinfo: true
+            refinecraft.ptime: true
+            refinecraft.ptime.others: true
+            refinecraft.togglejail: true
+            refinecraft.top: true
+            refinecraft.tp: true
+            refinecraft.tphere: true
+            refinecraft.tppos: true
+            refinecraft.tptoggle: true
+            refinecraft.unban: true
+            refinecraft.unbanip: true
+            refinecraft.weather: true
+            refinecraft.whois: true
+            refinecraft.world: true
+            refinecraft.worlds.*: true
+        inheritance:
+        - Builder
+    Admin:
+        permissions:
+            permissions.*: true
+            # Since we use refinecraft.* permission here, we can still disable commands like this
+            # This is only available for refinecraft permissions
+            -refinecraft.backup: true
+            -refinecraft.refinecraft: true
+            -refinecraft.setspawn: true
+            -refinecraft.reloadall: true
+            refinecraft.*: true
+        inheritance:
+        - Moderator
+    Owner:
+        permissions:
+            # Double negation
+            -refinecraft.backup: false
+            -refinecraft.refinecraft: false
+            -refinecraft.setspawn: false
+            -refinecraft.reloadall: false
+        inheritance:
+        - Admin
+messages:
+    build: '&cYou do not have permission to build here.'

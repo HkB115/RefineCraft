@@ -1,0 +1,5 @@
+net/refination/nms/SpawnEggProvider.class
+net/refination/providers/ProviderFactory.class
+net/refination/nms/SpawnerProvider.class
+net/refination/nms/PotionMetaProvider.class
+net/refination/providers/Provider.class

@@ -1,0 +1,11 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: RCchat
+main: net.refination.refinecraft.chat.RCchat
+#main: net.refination.refinecraft.chat.RCchat
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: 2.0.1-b${BUILD_NUMBER}
+website: http://tiny.cc/RefineCraftCommands
+description: Provides chat control features for RefineCraft.  Requires Permissions.
+authors: [HkB115]
+depend: [RefineCraft]
+#softdepend: [Factions]

@@ -1,0 +1,9 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: RefineCraftGeoIP
+main: net.refination.refinecraft.geoip.RefineCraftGeoIP
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: 2.0.1-b${BUILD_NUMBER}
+website: http://tiny.cc/RefineCraftCommands
+description: Shows the country or city of a user on login and /whois.
+authors: [Zenexer, ementalo, Aelux, Brettflan, KimKandor, snowleo, ceulemans, Xeology]
+depend: [RefineCraft]

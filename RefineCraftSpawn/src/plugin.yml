@@ -1,0 +1,18 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: RefineCraftSpawn
+main: net.refination.refinecraft.spawn.RefineCraftSpawn
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: ${project.version}-b${BUILD_NUMBER}
+website: http://tiny.cc/RefineCraftCommands
+description: Provides spawn control commands, utilizing RefineCraft.
+authors: [Zenexer, ementalo, Aelux, Brettflan, KimKandor, snowleo, ceulemans, Xeology, KHobbits]
+depend: [RefineCraft]
+commands:
+  setspawn:
+    description: Set the spawnpoint to your current position.
+    usage: /<command> <group>
+    aliases: [esetspawn]
+  spawn:
+    description: Teleport to the spawnpoint.
+    usage: /<command> [player]
+    aliases: [espawn]

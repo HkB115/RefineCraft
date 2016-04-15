@@ -1,0 +1,20 @@
+# This determines the command prefix when there are conflicts (/name:home, /name:help, etc.)
+name: RefineCraftXMPP
+main: net.refination.refinecraft.xmpp.RefineCraftXMPP
+# Note to developers: This next line cannot change, or the automatic versioning system will break.
+version: ${project.version}-b${BUILD_NUMBER}
+website: http://ess.khhq.net/wiki/XMPP
+description: Provides xmpp communication.
+authors:
+  - snowleo
+depend: [RefineCraft]
+commands:
+  setxmpp:
+    description: set your xmpp address
+    usage: /<command> <address>
+  xmpp:
+    description: send a message to a player
+    usage: /<command> <player> <message>
+  xmppspy:
+    description: toggle xmpp spy for all messages
+    usage: /<command> <player>
